@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/new/new",
+    "pages/case/case",
+    "pages/handle/handle",
+    "pages/about/about",
+    "pages/logs/logs",
+    "pages/product/product"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2db5a3",
+    "navigationBarTitleText": "织网通讯",
+    "navigationBarTextStyle": "white",
+    "backgroundColor":"#efefef"
+  },
+  "tabBar": {
+    "selectedColor": "#2db5a3",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./img/shouye.png",
+        "selectedIconPath": "./img/shouye_h.png"
+      },
+      {
+        "pagePath": "pages/case/case",
+        "text": "方案",
+        "iconPath": "./img/xinwen.png",
+        "selectedIconPath": "./img/xinwen_h.png"
+      },
+      {
+        "pagePath": "pages/handle/handle",
+        "text": "办理",
+        "iconPath": "./img/banli.png",
+        "selectedIconPath": "./img/banli_h.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于",
+        "iconPath": "./img/guanyuwomen.png",
+        "selectedIconPath": "./img/guanyuwomen_h.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+/**app.wxss**/
+page {
+  background-color: #efefef;
+  font-size: 22rpx;
+}
+.curr_title{
+  font-size: 30rpx;
+  text-align: center;
+  padding:40rpx 0 30rpx;
+}
+.curr_title>text{
+  border-bottom:2rpx solid #2db5a3;
+  padding: 0 0 10rpx;
+  display: inline-block;
+  margin-bottom: 40rpx;
+}
+.curr_banner{
+    position: relative;
+}
+.curr_banner image{
+  height: 200rpx;
+  width: 100%;
+  display: block;
+}
+.curr_banner>text{
+  position: absolute;
+  font-size: 32rpx;
+  color: #666;
+  left: 50%;
+  top: 85%;
+  transform: translate(-50%,-50%);
+}
+.curr_banner>text.title_c{
+  top: 50%;
+  transition: 1.5s;
+}

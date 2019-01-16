@@ -1,0 +1,43 @@
+.preface{
+    display: flex;
+    width: 94%;
+    margin: 0 auto;
+    padding: 30rpx;
+    background: #fff;
+}
+.preface_right{
+    padding-left: 10rpx;
+    font-size: 22rpx;
+    color: #666;
+    line-height: 32rpx;
+    text-justify:center;
+}
+.preface image{
+    width: 278rpx;
+    height: 153rpx;
+}
+/* 客户类型 */
+.applyBut{
+    margin-top:20rpx;
+    background: #fff; 
+    display: flex;
+}
+.applyBut_left, .applyBut_right{
+    text-align: center;
+    width: 50%;
+}
+.explain{
+    padding: 30rpx 3%;
+    background: #fff;
+    margin-top:20rpx; 
+}
+.explain_about_title{
+    color: #2db5a3;
+    font-size:32rpx; 
+    padding:0 0 20rpx 0;
+    display: block;
+}
+.explain_about_text{
+    color: #666;
+    padding-bottom:30rpx; 
+}

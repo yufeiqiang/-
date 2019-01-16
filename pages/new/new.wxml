@@ -1,0 +1,6 @@
+<view>
+    <view class="curr_banner">
+        <image src="../../img/new_b.jpg" />
+        <text id="bannerText" class="{{_cur==1?'title_c':''}}">最新动态</text>
+    </view>
+</view>

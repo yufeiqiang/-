@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 轮播图 -->
+  <view class='banner' style="width: 100%;">
+    <swiper
+      indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}"
+      interval="{{interval}}"
+      duration="{{duration}}"
+      indicatorActiveColor="{{indicatorActiveColor}}"
+      circular="{{circular}}"
+    >
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 按钮 -->
+  <view class="but_list">
+    <navigator hover-class="none">
+      <image src="../../img/but01.png" />
+      <text>解决方案</text>
+    </navigator>
+    <navigator hover-class="none">
+      <image src="../../img/but02.png" />
+      <text>产品中心</text>
+    </navigator>
+    <navigator hover-class="none">
+      <image src="../../img/but03.png" />
+      <text>在线办理</text>
+    </navigator>
+    <navigator hover-class="none">
+      <image src="../../img/but04.png" />
+      <text>最新动态</text>
+    </navigator>
+  </view>
+  <!-- 最新动态 -->
+  <view>
+    <view class='curr_title'>
+      <text> 最新动态</text>
+      <view wx:for="{{newImg}}" wx:key="index" class="newlist">
+        <view class="newImg"><image src="{{item}}"/></view>
+        <view class="newText">
+          <view class="newText_top">
+            国际智慧城市峰会国际智慧城市峰会国际智慧城市峰会 
+            <text>[详情]</text>
+          </view>
+          <view class="newText_bottom">时间：2018-05-09 <text>织网</text></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+<view>
+    <view class="curr_banner">
+        <image src="../../img/about_b.jpg" />
+        <text id="bannerText" class="{{_cur==1?'title_c':''}}">即时办理</text>
+    </view>
+</view>
