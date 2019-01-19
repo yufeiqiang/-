@@ -1,6 +1,125 @@
 <view>
     <view class="curr_banner">
-        <image src="../../img/about_b.jpg" />
-        <text id="bannerText" class="{{_cur==1?'title_c':''}}">即时办理</text>
+      <image src="../../img/about_b.jpg" />
+      <text id="bannerText" class="{{_cur==1?'title_c':''}}">关于我们</text>
+    </view>
+    <view>
+      <view class='tabList'>
+        <view class='tabList01 {{currentIndex ==0 ? "tabListCurr":""}}' bindtap='titleClick' data-idx='0'>公司简介</view>
+        <view class='tabList02 {{currentIndex ==1 ? "tabListCurr":""}}' bindtap='titleClick' data-idx='1'>招贤纳士</view>
+        <view class='tabList03 {{currentIndex ==2 ? "tabListCurr":""}}' bindtap='titleClick' data-idx='2'>发展历程</view>
+      </view>
+      <view>
+        <swiper class='SwiperList' bindchange='pagechange' current='{{currentIndex}}'>
+            <!-- 公司简介 -->
+            <swiper-item class="SwiperList01">
+              <scroll-view scroll-y="true">
+                <view>
+                  <image src="../../img/us_img1.jpg" />
+                  <view>
+                    广州织网通讯科技有限公司于2015年6月1日在中国广州成立，以努力打造成为基于通信基础设施运营的云服务提供商为企业愿景。公司具有雄厚的资金实力，是富力地产、实地地产全国项目的通信网络（光纤到户）及智能化系统集成建设、智能家居软硬件配套及智慧社区（楼宇）运营的战略合作商，与时代地产、中海地产、越秀地产为深度合作伙伴，是广东智慧城市产业技术创新联盟理事单位之一。
+                  </view> 
+                  <image src="../../img/us_img2.jpg" />
+                  <view>
+                    广州织网通讯有限公司是行业领先的智慧地产、智慧社区（园区）增值运营解决方案提供商，公司是富力地产、实地地产的战略合作伙伴；与时代地产、中海地产、越秀地产在通讯运营智能化建设等开展全面深度合作。为通讯运营商、开发商、产业园区、物业提供创新技术和产品综合解决方案，实现城市物联、。助力政府管理服务，提升城市居民智能化生活体验。
+                  </view> 
+                  <image src="../../img/us_img3.jpg" />
+                  <view>
+                    我司提供完整智慧城市/园区/住区弱电智能化、酒店公寓智能化、家居智能化、建筑能源管理系统等综合解决方案。同时我司作为运营商长期合作的工程施工、通信业务代理和通信线路维护单位，拥有丰富的工程实施、维护及业务拓展经验；借助互联网、物联网，充分发挥信息通信相关技术、电信业务及信息化基础设施搭建智能楼宇、智能家居、路网监控等领域。
+                  </view> 
+                  <view class='swiperNum'></view>
+                </view>
+              </scroll-view>
+            </swiper-item>
+            <!-- 招贤纳士 -->
+            <swiper-item class="SwiperList02">
+              <scroll-view scroll-y="true"> 
+                <view class='zhaopinList'>
+                  <view class='zhaopinTitle'>
+                    <view class='zhaopinTitleLeft'>前端开发</view>
+                    <view class='zhaopinTitleRight'>2018-05-09</view>
+                  </view>
+                  <view class='zhaopinText'>
+                    <view class='zhaopin'>职位描述</view>
+                    1.进行系统的功能定义,程序设计；
+                    2.根据设计文档或需求说明辅助完成代码编写，调试和维护；
+                    3.配合项目经理完成相关任务目标。
+                  </view>
+                </view>
+                <view class='zhaopinList'>
+                  <view class='zhaopinTitle'>
+                    <view class='zhaopinTitleLeft'>前端开发</view>
+                    <view class='zhaopinTitleRight'>2018-05-09</view>
+                  </view>
+                  <view class='zhaopinText'>
+                    <view class='zhaopin'>职位描述</view>
+                    1.进行系统的功能定义,程序设计；
+                    2.根据设计文档或需求说明辅助完成代码编写，调试和维护；
+                    3.配合项目经理完成相关任务目标。
+                  </view>
+                </view>
+                <view class='swiperNum'></view>
+              </scroll-view>
+            </swiper-item>
+            <swiper-item class="SwiperList03">
+              <scroll-view scroll-y="true">
+                <view class='course'>
+                  <view class='courseCurr'>
+                    <view class='courseCurrLeft'>
+                      <image src='../../img/us_img4.png'></image>
+                    </view>
+                    <view class='courseCurrRight'>
+                      <view class='courseTitle'>2015年</view>
+                      <view class='courseText'>
+                        成立：2015年6月1日在中国广州成立
+                      </view>
+                    </view>
+                  </view>
+                  <view class='courseCurr'>
+                    <view class='courseCurrLeft'>
+                      <image src='../../img/us_img5.png'></image>
+                    </view>
+                    <view class='courseCurrRight'>
+                      <view class='courseTitle'>2016年</view>
+                      <view class='courseText'>
+                       广州市黄埔区文冲村《智能社区改造》获广州市首个智慧社区落地项目，广州电视台、等多家电视台及新闻媒体争先报道
+                      </view>
+                    </view>
+                  </view>
+                  <view class='courseCurr'>
+                    <view class='courseCurrLeft'>
+                      <image src='../../img/us_img6.png'></image>
+                    </view>
+                    <view class='courseCurrRight'>
+                      <view class='courseTitle'>2017年</view>
+                      <view class='courseText'>
+                        荣获《2017中国智慧城市优秀解决方案奖》与多家政府单位达成合作，如：广州交通集团三山医药物流中心签 订《智能化系统项目》、顺德区戒毒所《技防系统升级改造项目》、中海地产《中海花湾通讯业务》等，与富力地产、实地地产、中海地产、天力物业、中国电信、中国联通、中国移动等合作项目达200多个项目。
+                      </view>
+                    </view>
+                  </view>
+                  <view class='courseCurr'>
+                    <view class='courseCurrLeft'>
+                      <image src='../../img/us_img7.png'></image>
+                    </view>
+                    <view class='courseCurrRight'>
+                      <view class='courseTitle'>2018年</view>
+                      <view class='courseText'>
+                        自主开发并上线：联合物联APP、自主研发：织网NB-Iot智能烟感并进行CCCf认证共获得发明专利8个新增《增值电信业务经营许可证》、升级《设计、施工、维修资格证》肆级，NB-loT智能烟感消防报警应急响应解决方案荣获《2018国窄带物联风（NB-loT）优秀解决方案成果奖》，搬迁至办公区域更宽阔海航大厦13楼办公室。
+                      </view>
+                    </view>
+                  </view>
+                  <view class='courseCurr courseLast'>
+                    <view class='courseCurrLeft'>
+                      <image src='../../img/us_img8.png'></image>
+                    </view>
+                    <view class='courseCurrRight'>
+                    </view>
+                  </view>
+                  <view class='swiperNum courseSwiperNum'></view>
+                </view>
+              </scroll-view>
+            </swiper-item>
+        </swiper>
+      </view>
     </view>
 </view>

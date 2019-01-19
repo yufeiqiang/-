@@ -5,8 +5,10 @@
     "pages/case/case",
     "pages/handle/handle",
     "pages/about/about",
-    "pages/logs/logs",
-    "pages/product/product"
+    "pages/goods/goods",
+    "pages/newdetail/newdetail",
+    "pages/logs/logs"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,12 +25,6 @@
         "text": "首页",
         "iconPath": "./img/shouye.png",
         "selectedIconPath": "./img/shouye_h.png"
-      },
-      {
-        "pagePath": "pages/case/case",
-        "text": "方案",
-        "iconPath": "./img/xinwen.png",
-        "selectedIconPath": "./img/xinwen_h.png"
       },
       {
         "pagePath": "pages/handle/handle",

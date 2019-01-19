@@ -12,7 +12,7 @@ page {
   border-bottom:2rpx solid #2db5a3;
   padding: 0 0 10rpx;
   display: inline-block;
-  margin-bottom: 40rpx;
+  margin-bottom: 60rpx;
 }
 .curr_banner{
     position: relative;
@@ -24,7 +24,7 @@ page {
 }
 .curr_banner>text{
   position: absolute;
-  font-size: 32rpx;
+  font-size: 42rpx;
   color: #666;
   left: 50%;
   top: 85%;

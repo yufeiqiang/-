@@ -1,0 +1,26 @@
+page{
+  background: #fff;
+}
+.newdetailBox{
+  padding:60rpx 30rpx;
+}
+.newdetailTitle{
+  text-align: center;
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+}
+.createTime{
+  text-align: right;
+  font-size: 24rpx;
+  color: #999;
+  margin: 30rpx 0;
+}
+.createTime text{
+  padding: 0 40rpx 0 0rpx;
+  display: inline-block;
+}
+.newsInfor{
+  font-size: 28rpx;
+  color: #666;
+}

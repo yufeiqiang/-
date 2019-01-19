@@ -1,0 +1,10 @@
+<wxs module="common" src="../../utils/common.wxs"></wxs>
+<view class='newdetailBox'>
+    <view class='newdetailTitle'>
+      {{newsTitle}}
+    </view>
+    <view class='createTime'><text>织网</text>时间：{{common.dateFormat(createTime,'yyyy-MM-dd')}}</view>
+    <view class='newsInfor'>
+      <rich-text nodes="{{newsInfor}}"></rich-text>
+    </view>
+</view>

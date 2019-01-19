@@ -3,4 +3,19 @@
         <image src="../../img/new_b.jpg" />
         <text id="bannerText" class="{{_cur==1?'title_c':''}}">最新动态</text>
     </view>
+    <view class="newList">
+        <view class="newListLfit"><image src="../../img/newlist01.jpg" /></view>
+        <view class="newListRight">
+            <view class="newTop"> 
+                <text class="newTitle">公司年会</text>
+                <view class="newText">
+                    国际智慧城市峰会国际智慧城市峰会国际智慧城市峰会
+                    <text>[详情]</text>
+                </view>
+            </view>
+            <view class="newTime">
+                <view>2019-06-18 <text>织网</text></view>
+            </view>
+        </view>
+    </view>
 </view>

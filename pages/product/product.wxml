@@ -1,6 +1,0 @@
-<view>
-    <view class="curr_banner">
-        <image src="../../img/product_b.jpg" />
-        <text id="bannerText" class="{{_cur==1?'title_c':''}}">产品中心</text>
-    </view>
-</view>

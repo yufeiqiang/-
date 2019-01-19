@@ -4,34 +4,29 @@
         <text id="bannerText" class="{{_cur==1?'title_c':''}}">即时办理</text>
     </view>
     <view>
-        <view class="preface">
-            <view class="preface_left">
-                <image src="../../img/han1.jpg" />
-            </view>
-            <view class="preface_right">
-                 我们是以努力打造成为基于通信基础设施运营的公司，同时与中国电信、中国移动、中国联通等多家运营商建立了战略合作关系，作为运营商的长期合作伙伴，我们会提供三大运营商最优质和最实惠的宽带接入服务。
-            </view>
-        </view>
         <view class="applyBut">
             <view class="applyBut_left">
-                <text>家庭客户</text>
-                <image src="" />
+                <image src="../../img/personal.png" />
+                <view>家庭客户</view>
             </view>
             <view class="applyBut_right">
-                <text>家庭客户</text>
-                <image src="" />
+                <image src="../../img/business.png" />
+                <view>商业客户</view>
             </view>
         </view>
         <view class="explain">
             <text class="explain_about_title">关于市场部</text>
+            <view class="preface_right">
+                 我们是以努力打造成为基于通信基础设施运营的公司，同时与中国电信、中国移动、中国联通等多家运营商建立了战略合作关系，作为运营商的长期合作伙伴，我们会提供三大运营商最优质和最实惠的宽带接入服务。
+            </view>
+            <image src="../../img/han1.jpg" />
             <view class="explain_about_text">
                 市场部，是广州织网通讯科技有限公司的服务平台，是以努力打造成为基于通信基础设施运营的部门，同时与中国电信、中国移动、中国联通等多家运营商建立了战略合作关系，作为运营商长期合作的工程施工、通信业务代理和通信线路维护单位，有丰富的工程实施、维护及业务拓展经验，为全国多栋楼宇提供建营装维一体化服务，公司主营业务包括：楼宇（小区）通讯投资建设、智能家居、行业智能wifi、会议通等等，为业户提供全面、综合的通讯解决方案。
             </view>
             <text class="explain_about_title">我们的需求-受理</text>
-            <view>
-                <image src=""/>
+            <view class="yewu">
+                <image src="../../img/yewu.png"/>
             </view>
-
         </view>
     </view>
 </view>

@@ -1,1 +1,102 @@
-/* pages/about/about.wxss */
+page{
+    background: #fff;
+}
+.tabList{
+    display: flex;
+    justify-content:center;
+    padding: 60rpx 0 30rpx;
+}
+.tabList01, .tabList02, .tabList03{
+    width: 150rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    color: #666;
+    text-align: center;
+    border: 1rpx solid #999;
+    border-radius:8rpx; 
+    margin-right:30rpx; 
+    font-size: 28rpx;
+}
+.tabListCurr{
+    color: #2db5a3;
+    border: 1rpx solid #2db5a3;
+}
+.SwiperList{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    top:400rpx;
+    font-size: 24rpx;
+    color: #666;
+    line-height: 42rpx;
+}
+.SwiperList image{
+   width: 100%;
+   margin: 16rpx 0;
+}
+scroll-view{
+    width: 100%;
+    height: 100%;/*动态高度*/
+    box-sizing: border-box;
+    padding: 0 20rpx;
+}  
+.swiperNum{
+  height: 460rpx;
+}
+.zhaopinList{
+  border: 1rpx solid rgb(231, 231, 231);
+  border-top: 4rpx solid #2db5a3;
+  padding: 20rpx;
+  margin: 0 0 30rpx 0
+}
+.zhaopinTitle{
+  display: flex;
+  justify-content:space-between;
+}
+.zhaopinTitleLeft{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #666;
+  margin-bottom:20rpx; 
+}
+.course{
+  position: relative;
+  overflow: hidden;
+  padding-bottom:180rpx;
+}
+.course::after{
+  position: absolute;
+  top: 30rpx;
+  bottom: 0;
+  content: "";
+  width: 2px;
+  background-color: #e2e2e2;
+  left: 50px;
+}
+.courseCurr{
+  display: flex;
+  position: relative;
+  padding: 0 0 50rpx 0;
+  z-index: 2;
+}
+.courseCurrLeft image{
+  width: 190rpx;
+  height: 190rpx;
+}
+.courseCurrRight{
+  padding: 0 30rpx;
+}
+.courseTitle{
+  font-size: 30rpx;
+  color: #333;
+}
+.courseLast{
+    background: #fff;
+    position: absolute;
+    left: 10rpx;
+}
+.courseText{
+  text-align: justify;
+  font-size: 26rpx;
+}

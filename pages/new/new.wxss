@@ -1,1 +1,37 @@
-/* pages/new/new.wxss */
+page{
+    background: #fff;
+}
+.newList{
+    display: flex;
+    padding: 20rpx 0;
+    width: 94%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border-bottom:1rpx dashed #999; 
+}
+.newListLfit image{
+    width: 270rpx;
+    height: 190rpx;
+}
+.newListRight{
+    padding-left:20rpx; 
+    display: flex;
+    flex-wrap:wrap;
+}
+.newTitle{
+    font-size: 30rpx;
+    color: #333;
+}
+.newText{
+    font-size: 26rpx;
+    color: #666;
+}
+.newText text{
+    color: #2db5a3;
+}
+.newTop{
+    align-self: flex-start;
+}
+.newTime{
+    align-self: flex-end;
+}

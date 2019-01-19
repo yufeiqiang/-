@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<wxs module="common" src="../../utils/common.wxs"></wxs>
 <view class="container">
   <!-- 轮播图 -->
   <view class='banner' style="width: 100%;">
@@ -19,35 +20,48 @@
   </view>
   <!-- 按钮 -->
   <view class="but_list">
-    <navigator hover-class="none">
+    <navigator 
+    url="../case/case"
+    hover-class="none"
+    >
       <image src="../../img/but01.png" />
       <text>解决方案</text>
     </navigator>
-    <navigator hover-class="none">
+    <navigator 
+    url="../goods/goods"
+    hover-class="none"
+    >
       <image src="../../img/but02.png" />
       <text>产品中心</text>
     </navigator>
-    <navigator hover-class="none">
-      <image src="../../img/but03.png" />
-      <text>在线办理</text>
-    </navigator>
-    <navigator hover-class="none">
+    <view>
+      <button open-type="contact"  class="consult">
+        <image src="../../img/but03.png" />
+        在线咨询
+      </button>
+    </view>
+    <navigator 
+    url="../new/new"
+    hover-class="none"
+    >
       <image src="../../img/but04.png" />
       <text>最新动态</text>
     </navigator>
   </view>
+  
   <!-- 最新动态 -->
   <view>
     <view class='curr_title'>
       <text> 最新动态</text>
-      <view wx:for="{{newImg}}" wx:key="index" class="newlist">
-        <view class="newImg"><image src="{{item}}"/></view>
+      <view wx:for="{{newData}}" wx:key="index" class="newlist" bindtap="navigators" data-id="{{item.id}}">
+        <view class="newImg"><image src="http://192.168.0.45:9090/{{item.image}}"/></view>
         <view class="newText">
           <view class="newText_top">
-            国际智慧城市峰会国际智慧城市峰会国际智慧城市峰会 
+            <view class='newTitle'>{{common.sub(item.newsTitle,12)}}</view>
+             {{common.sub(item.inforTerse,36)}}
             <text>[详情]</text>
           </view>
-          <view class="newText_bottom">时间：2018-05-09 <text>织网</text></view>
+          <view class="newText_bottom">时间：{{common.dateFormat(item.createTime,'yyyy-MM-dd')}} <text>织网</text></view>
         </view>
       </view>
     </view>

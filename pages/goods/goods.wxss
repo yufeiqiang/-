@@ -1,0 +1,31 @@
+.productTitle{
+  text-align: center;
+  padding: 50rpx 0;
+}
+.productTitle text{
+  font-size: 34rpx;
+  border-bottom: 2rpx solid #2db5a3;
+  padding-bottom: 10rpx;
+}
+.productBox{
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+.productList{
+  width: 320rpx;
+  height: auto;
+  margin-bottom: 20rpx;
+}
+.productList image{
+  width: 320rpx;
+  height: 240rpx;
+}
+.productHead{
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 50rpx;
+  color: #333;
+}

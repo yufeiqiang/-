@@ -12,6 +12,13 @@
   padding-bottom:30rpx;
   width: 92%;
   display: inline-flex;
+  border-bottom: 1rpx dashed #999;
+  margin-bottom:50rpx; 
+}
+.newTitle{
+  color: #333;
+  font-size:30rpx;
+  margin-bottom:10rpx; 
 }
 .newImg{
   width: 40%;
@@ -28,12 +35,13 @@
   font-size: 26rpx;
   box-sizing: border-box; 
   text-align: left;
-  color:#333;
+  color:#666;
   display: flex;
   flex-wrap:wrap;
 }
 .newText .newText_top{
   align-self: flex-start;
+  font-size: 26rpx;
 }
 .newText .newText_top text{
   color: #2db5a3;
@@ -58,11 +66,34 @@
   padding: 0 40rpx;
   text-align: center;
 }
-.but_list navigator image{
+.but_list navigator image, .but_list view image{
   width: 110rpx;
   height: 118rpx;
 }
+.consult{
+  width: 190rpx;
+  background-color: white;
+  color: #333;
+  border-radius: 0rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  padding:0 40rpx;
+  text-align:center;
+
+}
+.consult image {
+  width: 110rpx;
+  height: 118rpx;
+}
+.consult::after {
+  border: 0; 
+}
 .but_list navigator text{
   display: block;
-  font-size: 22rpx;
+  font-size: 26rpx;
+  line-height: 58rpx;
+  color: #333;
 }

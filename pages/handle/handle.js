@@ -1,4 +1,4 @@
-// pages/handle/handle.js
+
 const getData=getApp()
 Page({
 

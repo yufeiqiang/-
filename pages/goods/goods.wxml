@@ -1,0 +1,40 @@
+<view>
+    <view class="curr_banner">
+        <image src="../../img/product_b.jpg" />
+        <text id="bannerText" class="{{_cur==1?'title_c':''}}">产品中心</text>
+    </view>
+    <view class='productItem'>
+      <view class='productTitle'><text>智能家居</text></view>
+      <view class='productBox'>
+        <view class='productList'>
+          <image src='../../img/product01.jpg' class='productImg'></image>
+          <view class='productHead'>智能烟感</view> 
+        </view>
+        <view class='productList'>
+          <image src='../../img/product01.jpg' class='productImg'></image>
+          <view class='productHead'>智能烟感</view> 
+        </view>
+        <view class='productList'>
+          <image src='../../img/product01.jpg' class='productImg'></image>
+          <view class='productHead'>智能烟感</view> 
+        </view>
+      </view>
+    </view>
+    <view class='productItem'>
+      <view class='productTitle'><text>智能消防</text></view>
+      <view class='productBox'>
+        <view class='productList'>
+          <image src='../../img/product01.jpg' class='productImg'></image>
+          <view class='productHead'>智能烟感</view> 
+        </view>
+        <view class='productList'>
+          <image src='../../img/product01.jpg' class='productImg'></image>
+          <view class='productHead'>智能烟感</view> 
+        </view>
+        <view class='productList'>
+          <image src='../../img/product01.jpg' class='productImg'></image>
+          <view class='productHead'>智能烟感</view> 
+        </view>
+      </view>
+    </view>
+</view>

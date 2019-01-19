@@ -1,36 +1,25 @@
-// pages/about/about.js
+// pages/newdetail/newdetail.js
+const urlList = require('../../config')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    _cur:"",
-    currentIndex :'0'
+    id:'',
+    createTime:'',
+    newsTitle:'',
+    newsInfor:'',
   },
 
-  // 点击tab
-  titleClick:function(e){
-    let currentPageIndex =this.setData({
-        currentIndex: e.currentTarget.dataset.idx
-    })
-  },
-  // swiper切换时会调用
-  pagechange: function (e) {
-    if ("touch" === e.detail.source) {
-      let currentPageIndex = e.detail.current
-      this.setData({
-        currentIndex: currentPageIndex
-      })
-    }
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.setData({
-      _cur:1
+      id: options.id
     })
+    this.newdetail()
   },
 
   /**
@@ -80,5 +69,23 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  newdetail(){
+    let that = this
+    wx.request({
+      url: urlList.newdetail,
+      method: 'get',
+      data:{id:this.data.id},
+      success: function (res) {
+        let data = res.data.pojo
+        if (res.data.code == 200) {
+          that.setData({
+            newsInfor: data.newsInfor,
+            createTime: data.createTime,
+            newsTitle: data.newsTitle
+          })
+        }
+      }
+    })
   }
 })

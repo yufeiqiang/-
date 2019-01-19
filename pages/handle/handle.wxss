@@ -1,35 +1,45 @@
 .preface{
     display: flex;
-    width: 94%;
+    width: 100%;
     margin: 0 auto;
+    box-sizing: border-box;
     padding: 30rpx;
     background: #fff;
-}
-.preface_right{
-    padding-left: 10rpx;
-    font-size: 22rpx;
-    color: #666;
-    line-height: 32rpx;
-    text-justify:center;
-}
-.preface image{
-    width: 278rpx;
-    height: 153rpx;
+    overflow: hidden;
 }
 /* 客户类型 */
 .applyBut{
-    margin-top:20rpx;
+    /* margin-top:20rpx; */
     background: #fff; 
     display: flex;
+    overflow: hidden;
+    padding:40rpx 0; 
 }
 .applyBut_left, .applyBut_right{
     text-align: center;
     width: 50%;
+    font-size: 32rpx;
+    color: #333;
+    line-height: 52rpx;
+}
+.applyBut_left image, .applyBut_right image{
+    width: 120rpx;
+    height: 120rpx;
 }
 .explain{
+    font-size: 28rpx;
+    color: #666;
+    line-height: 42rpx;
+    text-justify:center;
     padding: 30rpx 3%;
     background: #fff;
     margin-top:20rpx; 
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.explain image{
+  width: 100%;
+  padding: 10rpx 0;
 }
 .explain_about_title{
     color: #2db5a3;
@@ -40,4 +50,12 @@
 .explain_about_text{
     color: #666;
     padding-bottom:30rpx; 
+}
+.yewu{
+    text-align: center;
+    overflow: hidden;
+}
+.yewu image{
+    width:750rpx;
+    height: 900rpx;
 }
