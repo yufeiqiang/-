@@ -24,18 +24,20 @@ Page({
       multiIndex: this.data.multiIndex
     };
     data.multiIndex[e.detail.column] = e.detail.value;
-    console.log(e)
+    // console.log(e)
     switch (e.detail.column) {
       case 0:
         switch (data.multiIndex[0]) {
-          case 0:
-            data.multiArray[1] = ['扁性动物11', '线形动物11', '环节动物11', '软体动物11', '节肢动物11']
-            data.multiArray[2] = ['猪肉绦虫11', '吸血虫11']
-            break
-          case 1:
-            data.multiArray[1] = ['鱼', '两栖动物', '爬行动物']
-            data.multiArray[2] = ['鲫鱼', '带鱼']
-            break
+          
+          // case 0:
+          //   console.log(115555)
+          //   data.multiArray[1] = ['扁性动物11', '线形动物11', '环节动物11', '软体动物11', '节肢动物11']
+          //   data.multiArray[2] = ['猪肉绦虫11', '吸血虫11']
+          //   break
+          // case 1:
+          //   data.multiArray[1] = ['鱼', '两栖动物', '爬行动物']
+          //   data.multiArray[2] = ['鲫鱼', '带鱼']
+          //   break
         }
         data.multiIndex[1] = 0;
         data.multiIndex[2] = 0;
@@ -91,14 +93,18 @@ Page({
       method:"post",
       data:{'userType':'personal'},
       success:function(res){
-        // console.log(res)
+        // console.log(res.data.pojo)
         if(res.data.code==200){
           that.setData({
             multiArray1:res.data.pojo
           })
+          that.changeData()
         }
       }
     })
+  },
+  changeData(){
+    console.log(this.data.multiArray1)
   },
   /**
    * 生命周期函数--监听页面加载
