@@ -1,0 +1,9 @@
+<wxs module="common" src="../../utils/common.wxs"></wxs>
+<view>
+  <view>
+    <view class='goodsTitle'>智能家居</view>
+    <view class='goodsTime'>时间：{{common.dateFormat(createTime,'yyyy-MM-dd')}}</view>
+    <view class='goodsText'><rich-text nodes="{{productInfo}}"></rich-text></view>
+  </view>
+</view>
+

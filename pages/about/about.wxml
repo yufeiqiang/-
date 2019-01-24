@@ -1,3 +1,4 @@
+<wxs module="common" src="../../utils/common.wxs"></wxs>
 <view>
     <view class="curr_banner">
       <image src="../../img/about_b.jpg" />
@@ -34,28 +35,14 @@
             <!-- 招贤纳士 -->
             <swiper-item class="SwiperList02">
               <scroll-view scroll-y="true"> 
-                <view class='zhaopinList'>
+                <view class='zhaopinList' wx:for="{{recruitData}}" wx:key="index">
                   <view class='zhaopinTitle'>
-                    <view class='zhaopinTitleLeft'>前端开发</view>
-                    <view class='zhaopinTitleRight'>2018-05-09</view>
+                    <view class='zhaopinTitleLeft'>{{item.title}}</view>
+                    <view class='zhaopinTitleRight'>{{common.dateFormat(item.createTime,'yyyy-MM-dd')}}</view>
                   </view>
                   <view class='zhaopinText'>
                     <view class='zhaopin'>职位描述</view>
-                    1.进行系统的功能定义,程序设计；
-                    2.根据设计文档或需求说明辅助完成代码编写，调试和维护；
-                    3.配合项目经理完成相关任务目标。
-                  </view>
-                </view>
-                <view class='zhaopinList'>
-                  <view class='zhaopinTitle'>
-                    <view class='zhaopinTitleLeft'>前端开发</view>
-                    <view class='zhaopinTitleRight'>2018-05-09</view>
-                  </view>
-                  <view class='zhaopinText'>
-                    <view class='zhaopin'>职位描述</view>
-                    1.进行系统的功能定义,程序设计；
-                    2.根据设计文档或需求说明辅助完成代码编写，调试和维护；
-                    3.配合项目经理完成相关任务目标。
+                    <rich-text nodes="{{item.recruitInfo}}"></rich-text>
                   </view>
                 </view>
                 <view class='swiperNum'></view>

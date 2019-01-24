@@ -1,4 +1,4 @@
-// pages/about/about.js
+const urlList=require('../../config')
 Page({
 
   /**
@@ -6,7 +6,8 @@ Page({
    */
   data: {
     _cur:"",
-    currentIndex :'0'
+    currentIndex :'0',
+    recruitData:[]
   },
 
   // 点击tab
@@ -31,6 +32,7 @@ Page({
     this.setData({
       _cur:1
     })
+    this.recruitList()
   },
 
   /**
@@ -80,5 +82,20 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  recruitList(){
+    const that=this
+    wx.request({
+      url:urlList.recruitList,
+      method:"get",
+      success:function(res){
+        if(res.data.code==200){
+          that.setData({
+            recruitData:res.data.pojo
+          })
+        }
+        console.log(that.data.recruitData)
+      }
+    })
   }
 })

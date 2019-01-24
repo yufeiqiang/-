@@ -7,8 +7,9 @@
     "pages/about/about",
     "pages/goods/goods",
     "pages/newdetail/newdetail",
+    "pages/goodsdetail/goodsdetail",
+    "pages/handledetail/handledetail",
     "pages/logs/logs"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",

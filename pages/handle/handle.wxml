@@ -5,11 +5,11 @@
     </view>
     <view>
         <view class="applyBut">
-            <view class="applyBut_left">
+            <view class="applyBut_left" data-userType="personal" bindtap="navigators">
                 <image src="../../img/personal.png" />
                 <view>家庭客户</view>
             </view>
-            <view class="applyBut_right">
+            <view class="applyBut_right" data-userType="business" bindtap="navigators">
                 <image src="../../img/business.png" />
                 <view>商业客户</view>
             </view>

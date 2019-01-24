@@ -1,11 +1,13 @@
 // pages/new/new.js
+const urlList=require('../../config')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    _cur:""
+    _cur:"",
+    newData:[],
   },
 
   /**
@@ -15,6 +17,7 @@ Page({
     this.setData({
       _cur:1
     })
+    this.newList()
   },
 
   /**
@@ -64,5 +67,26 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  newList(){
+    let that=this
+    wx.request({
+      url:urlList.newList,
+      method:'get',
+      success:function(res){
+        // console.log(res)
+        if(res.data.code==200){
+          that.setData({
+            newData:res.data.pojo.entryList
+          })
+        }
+      }
+    })
+  },
+  navigators(e){
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../newdetail/newdetail?id='+id+''
+    })
   }
 })

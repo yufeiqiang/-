@@ -1,20 +1,21 @@
+<wxs module="common" src="../../utils/common.wxs"></wxs>
 <view>
     <view class="curr_banner">
         <image src="../../img/new_b.jpg" />
         <text id="bannerText" class="{{_cur==1?'title_c':''}}">最新动态</text>
     </view>
-    <view class="newList">
-        <view class="newListLfit"><image src="../../img/newlist01.jpg" /></view>
+    <view class="newList" wx:for="{{newData}}" wx:key="index" bindtap='navigators' data-id="{{item.id}}">
+        <view class="newListLfit"><image src="http://192.168.0.45:9090/{{item.image}}" /></view>
         <view class="newListRight">
             <view class="newTop"> 
-                <text class="newTitle">公司年会</text>
-                <view class="newText">
-                    国际智慧城市峰会国际智慧城市峰会国际智慧城市峰会
+                <text class="newTitle">{{common.sub(item.newsTitle,12)}}</text>
+                <view class="newText" >
+                    {{common.sub(item.inforTerse,36)}}
                     <text>[详情]</text>
                 </view>
             </view>
             <view class="newTime">
-                <view>2019-06-18 <text>织网</text></view>
+                <view>时间：{{common.dateFormat(item.createTime,'yyyy-MM-dd')}} <text>织网</text></view>
             </view>
         </view>
     </view>

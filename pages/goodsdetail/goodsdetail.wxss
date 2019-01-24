@@ -1,0 +1,17 @@
+page{
+  background: #fff;
+}
+.goodsTitle{
+  text-align: center;
+  font-size: 36rpx;
+  color: #333;
+  padding: 40rpx 0;
+}
+.goodsTime{
+  text-align: right;
+  font-size:20rpx;
+  padding: 0 40rpx 80rpx 0;
+}
+.goodsText{
+  padding: 0 40rpx 0;
+}

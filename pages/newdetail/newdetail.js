@@ -19,6 +19,7 @@ Page({
     this.setData({
       id: options.id
     })
+    console.log(this.data.id)
     this.newdetail()
   },
 
@@ -78,6 +79,7 @@ Page({
       data:{id:this.data.id},
       success: function (res) {
         let data = res.data.pojo
+        // console.log(data)
         if (res.data.code == 200) {
           that.setData({
             newsInfor: data.newsInfor,

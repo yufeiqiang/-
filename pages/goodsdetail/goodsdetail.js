@@ -1,29 +1,33 @@
-const urlList=require('../../config.js')
-const getData = getApp()
+// pages/goodsdetail/goodsdetail.js
+const urlList = require('../../config'); 
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    _cur: "",
-    goodsList:{}
+    id:"",
+    createTime:"",
+    productTitle:"",
+    productInfo:""
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.goods()
+    this.setData({
+      id: options.id
+    })
+    this.goodsdetail()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.setData({
-      _cur: 1
-    })
+
   },
 
   /**
@@ -67,29 +71,22 @@ Page({
   onShareAppMessage: function () {
 
   },
-  // 产品列表
-  goods(){
+  goodsdetail:function(){
     let that=this
     wx.request({
-      url: urlList.goods,
-      method:"get",
+      url: urlList.goodsdetail,
+      method:'get',
+      data:{id:this.data.id},
       success:function(res){
-        let data=res.data
+        let data =res.data
         if (data.code==200){
           that.setData({
-            goodsList:data.pojo
+            createTime:data.pojo.createTime,
+            productTitle:data.pojo.productTitle,
+            productInfo: data.pojo.productInfo
           })
-          // console.log(data.pojo)
         }
       }
     })
-  },
-  // 点击产品
-  navigators(e) {
-    let id = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '../goodsdetail/goodsdetail?id=' + id + ''
-    })
   }
-
 })

@@ -65,5 +65,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  navigators(e){
+    let userType = e.currentTarget.dataset.usertype
+    console.log(userType)
+    wx.navigateTo({
+      url:'../handledetail/handledetail?userType='+userType+''
+    })
   }
 })

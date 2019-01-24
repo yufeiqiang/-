@@ -1,0 +1,47 @@
+<view>
+  <view class="curr_banner">
+    <image src="../../img/handle_b.jpg" />
+    <text id="bannerText" class="{{_cur==1?'title_c':''}}">即时办理</text>
+  </view>
+  <view class='itemIput'>
+    <view class='itemIputLeft'>选择地区</view> 
+    <view class='itemIputRight'>
+      <picker  mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+        <view class="picker">
+          {{multiArray[0][0]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='itemIput'>
+    <view class='itemIputLeft'>姓名</view> 
+    <view class='itemIputRight'><input></input></view>
+  </view>
+  <view class='itemIput'>
+    <view class='itemIputLeft'>手机</view> 
+    <view class='itemIputRight'><input></input></view>
+  </view>
+  <view class='itemIput'>
+    <view class='itemIputLeft'>身份证号</view> 
+    <view class='itemIputRight'><input></input></view>
+  </view>
+  <view class='itemIput'>
+    <view class='itemIputLeft'>地址</view> 
+    <view class='itemIputRight'><input></input></view>
+  </view>
+  <view class='itemIput'>
+    <view class='itemIputLeft'>联系时间</view> 
+    <view class='itemIputRight'><input></input></view>
+  </view>
+  <view class='itemIput remarks'>
+    <view class='itemIputLeft'>备注</view> 
+    <view class='itemIputRight'>
+      <textarea></textarea>
+    </view>
+  </view>
+  <button type="primary" 
+          size="default" 
+          bindtap="primary"
+          class='but'> 提交 
+  </button>
+</view>
