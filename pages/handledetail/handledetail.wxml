@@ -6,9 +6,19 @@
   <view class='itemIput'>
     <view class='itemIputLeft'>选择地区</view> 
     <view class='itemIputRight'>
-      <picker  mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+      <picker  mode="multiSelector" bindchange="bindMultiPickerChange" wx:if="{{multiArray.length > 0}}" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
         <view class="picker">
-          {{multiArray[0][0]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+          {{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}} {{multiArray[2][multiIndex[2]]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='itemIput'>
+    <view class='itemIputLeft'>选择楼盘</view> 
+    <view class='itemIputRight'>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="picker">
+          {{array[index]}}
         </view>
       </picker>
     </view>
