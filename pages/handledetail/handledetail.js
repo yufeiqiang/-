@@ -11,70 +11,62 @@ Page({
     multiArray1:[],
     multiArray: [],
     multiIndex: [0, 0, 0],
+    obtainIndex:[],
     name:[],
     city:[],
     area:[]
   },
+  bindcancel: function (e) {
+      console.log(this.data.obtainIndex)
+      this.setData({
+        multiArray:[this.changeName(), this.changeCity(0), this.changeArea(0, 0)],
+        multiIndex:[0,0,0]
+      })
+  },
+  obtainIndex: function (e) {
+      let data={
+        newinde: this.data.multiIndex
+      }
+    this.data.obtainIndex=data.newinde
+    console.log(this.data.obtainIndex)
+  },
   bindMultiPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    // console.log(e.detail.value)
     this.setData({
-      multiIndex: e.detail.value
+      multiIndex: e.detail.value,
     })
   },
   bindMultiPickerColumnChange: function (e) {
     var data = {
-      multiIndex: this.data.multiIndex
+      multiIndex: this.data.multiIndex,
+      multiArray: this.data.multiIndex
     };
     data.multiIndex[e.detail.column] = e.detail.value;
     switch (e.detail.column) {
       case 0:
-        this.changeCity(data.multiIndex[0])
-        this.changeArea(data.multiIndex[0], 0)
+        data.multiArray=[this.changeName(),
+          this.changeCity(data.multiIndex[0]),
+          this.changeArea(data.multiIndex[0], data.multiIndex[1])];
         data.multiIndex[1] = 0
         data.multiIndex[2] = 0
         break
       case 1:
-        this.changeArea(data.multiIndex[0], data.multiIndex[1]) 
+        data.multiArray = [this.changeName(), this.changeCity(data.multiIndex[0]), this.changeArea(data.multiIndex[0], data.multiIndex[1]) ]
         data.multiIndex[2] = 0
         break
+      case 2:
+        data.multiArray = [this.changeName(), this.changeCity(data.multiIndex[0]), this.changeArea(data.multiIndex[0], data.multiIndex[1])]
+         
     }
     this.setData(data);
   },
-
-  // 请求城市列表
-  saveUApply(){
-    let that=this
-    wx.request({
-      url:'http://www.weaving-comm.com:8081/immediatelyHandle/front/getProvCityAreaByUserType.do',
-      header:{'content-type':'application/x-www-form-urlencoded'},
-      method:"post",
-      data:{'userType':'personal'},
-      success:function(res){
-        // console.log(res.data.pojo)
-        if(res.data.code==200){
-          setTimeout(()=>{
-            that.setData({
-              multiArray1: citys
-            })
-            that.changeName()
-            that.changeCity(0)
-            that.changeArea(0, 0)
-          },4000)
-         
-        }
-      }
-    })
-  },
-
   // 初始化获取省份
   changeName(){
     const name=this.data.name=[]
     this.data.multiArray1.forEach(function(item,index){
       name.push(item.name)
     })
-    this.setData({
-      multiArray:[name,[],[]]
-    })
+    return name
   },
 
   // 初始化获取市区
@@ -83,9 +75,7 @@ Page({
     this.data.multiArray1[index].city.forEach(function(item){
         city.push(item.name)
     })
-    this.setData({
-      multiArray: [this.data.name, city,this.data.area]
-    })
+    return city
   },
 
   // 初始化获取县
@@ -94,11 +84,29 @@ Page({
     this.data.multiArray1[indexName].city[indexCity].area.forEach(function(item){
         area.push(item)
     })
-    this.setData({
-      multiArray:[this.data.name,this.data.city,area]
-    })
+    return area
   },
 
+  // 请求城市列表
+  saveUApply(){
+    let that=this
+    wx.request({
+      url: urlList.saveUApply,
+      header:{'content-type':'application/x-www-form-urlencoded'},
+      method:"post",
+      data:{'userType':'personal'},
+      success:function(res){
+        if(res.data.code==200){
+            that.setData({
+              multiArray1: res.data.pojo
+            })
+            that.setData({
+              multiArray:[that.changeName(),that.changeCity(0),that.changeArea(0, 0)]
+            })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

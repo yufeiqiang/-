@@ -1,4 +1,4 @@
-const basePath = "http://192.168.0.61:9090/";
+const basePath = "http://192.168.0.72:9090/";
 const urlList = {
   newList:`${basePath}/news/front/newsList.do`,
   newdetail: `${basePath}/news/front/getNewsInfo.do`,
