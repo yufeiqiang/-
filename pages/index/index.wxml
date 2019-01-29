@@ -54,7 +54,7 @@
     <view class='curr_title'>
       <text> 最新动态</text>
       <view wx:for="{{newData}}" wx:key="index" class="newlist" bindtap="navigators" data-id="{{item.id}}">
-        <view class="newImg"><image src="http://192.168.0.45:9090/{{item.image}}"/></view>
+        <view class="newImg"><image src="{{item.image}}"/></view>
         <view class="newText">
           <view class="newText_top">
             <view class='newTitle'>{{common.sub(item.newsTitle,12)}}</view>
