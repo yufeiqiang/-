@@ -1,0 +1,45 @@
+<view class="case_cuur">
+    <view class="case_title">
+        <image src="../../img/smart01.png" />
+    </view>
+    <view class="case_bg smart_a">
+        <view class="case_head_curr">
+            <view>解决方案简介</view>
+            <text>Intrduction To Solution</text>
+        </view>
+        <view class="case_head_text">
+            智慧家庭、数字家庭、Smart Home。简单来说，它是融合了自动
+化控制系统、计算机网络系统和网络通讯技术于一体的网络化、智能化
+的家居控制系统。
+        </view>
+    </view>
+    <view class="case_bg smart_b">
+        <view class="case_head_curr">
+            <view>项目优势</view>
+            <text>Advantage</text>
+        </view>
+        <view class="case_head_text">
+            智慧地产综合解决方案是基于楼盘红线内基础光纤网路配套建设
+为基础，使项目增加智慧社区、智能家居等差异化营销亮点而增值，
+同时为开发商的项目节约投资成成本及项目建成后运营管理成本。
+        </view>
+    </view>
+    <view class="case_bg smart_a smart_c">
+        <view class="case_head_curr">
+            <view>应用</view>
+            <text>Application</text>
+        </view>
+        <view class="case_head_img">
+            <image src="../../img/smart02.png" />
+        </view>
+    </view>
+    <view class="case_bg smart_d">
+        <view class="case_head_curr">
+            <view>系统架构</view>
+            <text>System Arhitecture</text>
+        </view>
+        <view class="case_head_img">
+            <image src="../../img/smart03.png" />
+        </view>
+    </view>
+</view>

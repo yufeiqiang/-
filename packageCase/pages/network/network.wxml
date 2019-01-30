@@ -1,0 +1,60 @@
+<view class="case_curr">
+    <view class="case_title">
+        <image src="../../img/network.png" />
+    </view>
+    <view class="case_bg network_a">
+        <view class="case_head_curr">
+            <view>解决方案简介</view>
+            <text>Intrduction To Solution</text>
+        </view>
+        <view class="case_head_text">
+            承建工程全资投建小区光纤网络，提供勘察、设计、施工、报建
+报验等服务及统一运营商接入；提供综合、全面、个性化的通信解决
+方案，满足固话、宽带、移动终端以及WIFI覆盖等通讯需求。
+        </view>
+    </view>
+    <view class="case_bg network_b">
+        <view class="case_head_curr">
+            <view>项目优势</view>
+            <text>Intrduction To Solution</text>
+        </view>
+        <view class="case_head_text">
+            智慧地产综合解决方案是基于楼盘红线内基础光纤网路配套建设
+为基础，使项目增加智慧社区、智能家居等差异化营销亮点而增值，
+同时为开发商的项目节约投资成成本及项目建成后运营管理成本。
+        </view>
+        <view class="network_b_img">
+            <image src="../../img/network01.png" />
+        </view>
+    </view>
+    <view class="case_bg">
+        <view class="case_head_curr application_title">
+            <view>应用</view>
+            <text>Application</text>
+        </view>
+        <view class="application">
+            <view>
+                <image src="../../img/net01.png" />
+            </view>
+            <view>
+                <image src="../../img/net02.png" />
+            </view>
+            <view>
+                <image src="../../img/net03.png" />
+            </view>
+            <view>
+                <image src="../../img/net04.png" />
+            </view>
+            <view>
+                <image src="../../img/net05.png" />
+            </view>
+        </view>
+        <view class="case_head_curr application_title application_title_02">
+            <view>系统架构</view>
+            <text>System Arhitecture</text>
+        </view>
+        <view class="application_network02">
+            <image src="../../img/network02.png" />
+        </view>
+    </view>
+</view>

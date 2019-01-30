@@ -1,0 +1,25 @@
+.intelligent_a{
+    color: #666;
+    background: #fff;
+}
+.intelligent_b{
+    color: #fff;
+}
+.intelligent_c{
+    background: #fff;
+    padding:40rpx 0;
+}
+.intelligent_c .case_head_image image{
+    width: 750rpx;
+    height:888rpx;
+}
+.intelligent_d .case_head_image{
+    text-align: center;
+}
+.intelligent_d{
+    color: #fff;
+}
+.intelligent_d .case_head_image image{
+    width: 713rpx;
+    height:726rpx;
+}

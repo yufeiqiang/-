@@ -1,0 +1,46 @@
+.network_a{
+    color: #fff;
+}
+.network_b{
+   background: #fff;
+   color: #666;
+}
+.network_b_img  {
+    text-align: center;
+    padding: 10rpx 0;
+}
+.network_b_img image{
+    width: 590rpx;
+    height: 621rpx;
+}
+.application{
+    display: flex;
+    flex-wrap: nowrap;
+    align-content:stretch;
+    justify-content:space-between;
+}
+.application view{
+    width: 99rpx;
+    align-self:center;
+}
+.application image{
+    width: 99rpx;
+    height: 134rpx;
+}
+.application_title{
+    color: #fff;
+}
+.application{
+    padding: 40rpx 0;
+}
+.application_network02{
+    padding: 30rpx 0;
+    text-align: center;
+}
+.application_title_02{
+    margin: 40rpx 0 0 0;
+}
+.application_network02 image{
+    width: 655rpx;
+    height: 543rpx;
+}

@@ -1,0 +1,43 @@
+<view>
+    <view class="curr_banner">
+        <image src="../../img/case_b.jpg" />
+        <text id="bannerText" class="{{_cur==1?'title_c':''}}">解决方案</text>
+    </view>
+    <view class="caseList">
+        <view class="caseItem">
+            <view class="caseTitle">
+                <view>光网社区</view>
+                <view class="caseEn">Network Community</view>
+            </view>
+            <image src="../../img/case01.png"></image>
+        </view>
+        <view class="caseItem">
+            <view class="caseTitle">
+                <view>智慧社区</view>
+                <view class="caseEn">Intelligent Community</view>
+            </view>
+            <image src="../../img/case02.png"></image>
+        </view>
+        <view class="caseItem">
+            <view class="caseTitle">
+                <view>智能家居</view>
+                <view class="caseEn">Smart Home</view>
+            </view>
+            <image src="../../img/case03.png"></image>
+        </view>
+        <view class="caseItem">
+            <view class="caseTitle">
+                <view>智慧园区</view>
+                <view class="caseEn">Intelligent Building</view>
+            </view>
+            <image src="../../img/case04.png"></image>
+        </view>
+        <view class="caseItem">
+            <view class="caseTitle">
+                <view>智慧城中村</view>
+                <view class="caseEn">Smart City Village</view>
+            </view>
+            <image src="../../img/case05.png"></image>
+        </view>
+    </view>
+</view>

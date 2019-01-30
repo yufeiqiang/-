@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 11,
 			"list": [
 				{
 					"id": -1,
@@ -80,6 +80,35 @@
 					"name": "办理详情",
 					"pathName": "pages/handledetail/handledetail",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "解决方案",
+					"pathName": "packageCase/pages/case/case",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "光网",
+					"pathName": "packageCase/pages/network/network",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "智慧社区",
+					"pathName": "packageCase/pages/intelligent/intelligent",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "智能家居",
+					"pathName": "packageCase/pages/smart/smart",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "城中村",
+					"pathName": "packageCase/pages/village/village"
 				}
 			]
 		}

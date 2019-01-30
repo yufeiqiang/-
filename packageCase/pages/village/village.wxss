@@ -1,0 +1,14 @@
+.village_a{
+    color: #fff;
+}
+.village_b{
+    color: #666;
+    background: #fff;
+}
+.village_d{
+    padding: 40rpx 0 40rpx 0;
+}
+.village_d .case_head_img image{
+    width: 750rpx;
+    height: 602rpx;
+}

@@ -1,0 +1,21 @@
+.smart_a{
+    background: #fff;
+    color: #666;
+}
+.smart_b{
+    color: #fff;
+}
+.smart_c{
+    padding:40rpx 0 40rpx 0 ;
+}
+.smart_c .case_head_img image{
+    width: 750rpx;
+    height: 525rpx;
+}
+.smart_d{
+    color: #fff;
+}
+.smart_d .case_head_img image{
+    width: 732rpx;
+    height: 640rpx;
+}

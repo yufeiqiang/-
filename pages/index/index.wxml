@@ -21,7 +21,7 @@
   <!-- 按钮 -->
   <view class="but_list">
     <navigator 
-    url="../case/case"
+    url="../../packageCase/pages/case/case"
     hover-class="none"
     >
       <image src="../../img/but01.png" />

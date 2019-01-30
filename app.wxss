@@ -34,3 +34,31 @@ page {
   top: 50%;
   transition: 1.5s;
 }
+.case_title{
+  height: 234rpx;
+}
+.case_title image{
+  width: 750rpx;
+  height: 234rpx;
+}
+.case_bg{
+  background: #66cccc;
+  padding: 40rpx 20rpx;
+}
+.case_head_curr{
+  text-align: center;
+  font-size: 36rpx;
+  padding-bottom: 15rpx;
+}
+.case_head_curr view{
+  line-height: 26rpx;
+}
+.case_head_curr text{
+  font-size: 24rpx;
+}
+.case_head_text {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  text-indent: 2em;
+  text-align: justify;
+}

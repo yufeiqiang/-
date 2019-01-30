@@ -1,0 +1,30 @@
+.caseList{
+    padding-top:30rpx; 
+    background: #fff;
+}
+.caseList image{ 
+    width: 700rpx;
+    height: 340rpx;
+}
+.caseList{
+    text-align: center;
+}
+.caseItem{
+    margin-bottom:20rpx; 
+    position: relative;
+}
+.caseTitle{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    font-size: 36rpx;
+    color: #333;
+    transform: translateY(-50%)
+}
+.caseEn{
+    font-size: 24rpx;
+}
+.caseItem:nth-child(2n) .caseTitle{
+    left: inherit;
+    right: 10%;
+}

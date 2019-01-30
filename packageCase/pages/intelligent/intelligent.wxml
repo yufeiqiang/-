@@ -1,0 +1,45 @@
+<view  class="case_curr">
+     <view class="case_title">
+        <image src="../../img/intelligent01.png" />
+    </view>
+    <view class="case_bg intelligent_a">
+        <view class="case_head_curr">
+            <view>解决方案简介</view>
+            <text>Intrduction To Solution</text>
+        </view>
+        <view class="case_head_text">
+            基于物联网、云计算等高新技术的“智慧社区”是“智慧城市”
+的一个“细胞”，它将是一个以人为本的智能管理系统，使人们的
+工作和生活更加便捷、舒适、高效。
+        </view>
+    </view>
+    <view class="case_bg intelligent_b">
+        <view class="case_head_curr">
+            <view>项目优势</view>
+            <text>Intrduction To Solution</text>
+        </view>
+        <view class="case_head_text">
+            智慧地产综合解决方案是基于楼盘红线内基础光纤网路配套建设
+为基础，使项目增加智慧社区、智能家居等差异化营销亮点而增值，
+同时为开发商的项目节约投资成成本及项目建成后运营管理成本。
+        </view>
+    </view>
+    <view class="case_bg intelligent_c">
+        <view class="case_head_curr">
+            <view>应用</view>
+            <text>Application</text>
+        </view>
+        <view class="case_head_image">
+            <image src="../../img/intelligent02.jpg" />
+        </view>
+    </view>
+    <view class="case_bg intelligent_d">
+        <view class="case_head_curr">
+            <view>系统架构</view>
+            <text>System Arhitecture</text>
+        </view>
+        <view class="case_head_image">
+            <image src="../../img/intelligent03.png" />
+        </view>
+    </view>
+</view>

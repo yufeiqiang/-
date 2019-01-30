@@ -5,7 +5,7 @@
         <text id="bannerText" class="{{_cur==1?'title_c':''}}">最新动态</text>
     </view>
     <view class="newList" wx:for="{{newData}}" wx:key="index" bindtap='navigators' data-id="{{item.id}}">
-        <view class="newListLfit"><image src="http://192.168.0.45:9090/{{item.image}}" /></view>
+        <view class="newListLfit"><image src="{{item.image}}" /></view>
         <view class="newListRight">
             <view class="newTop"> 
                 <text class="newTitle">{{common.sub(item.newsTitle,12)}}</text>

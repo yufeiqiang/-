@@ -1,0 +1,54 @@
+<view class="case_cuur">
+     <view class="case_title">
+        <image src="../../img/village01.jpg" />
+    </view>
+    <view class="case_bg village_a">
+        <view class="case_head_curr">
+            <view>解决方案简介</view>
+            <text>Intrduction To Solution</text>
+        </view>
+        <view class="case_head_text">
+            以“物联网+“打造八大功能整合创新方案，将智慧APP、智能
+门禁、摄像监控、安全锁控、联网烟感、信息发布、延迟插座、语音
+广播生态整合，每一个功能都是经过充分的调研和论证，结合城中村
+消防和治安隐患防范的时间需要，通过”智慧门禁+安防“、”智慧
+门禁+社区平台“、”智慧门禁+物业“、”智慧社区+托管“和”智
+慧社区+体验“五种模式，为社区用户提供便利、安全、舒适的居住
+体验。
+        </view>
+    </view>
+    <view class="case_bg village_b">
+        <view class="case_head_curr">
+            <view>项目优势</view>
+            <text>Advantage</text>
+        </view>
+        <view class="case_head_text">
+            解决了出租屋最突出的两大隐患：入屋盗窃和火灾。针对入屋盗
+窃，我司提供了联网的视频监控方案，居民可以通过手机APP实时查
+看；针对火灾，设计出延时开关关门预防居民电器过充，联网式烟感
+器可以实现联动门禁自动开门和警报。
+        </view>
+    </view>
+    <view class="case_bg village_a">
+        <view class="case_head_curr">
+            <view>应用</view>
+            <text>Application</text>
+        </view>
+        <view class="case_head_text">
+            居民充分体验到”智慧“为生活所带来的改变。一早起床，可以
+打开APP，可以看到最新的”头条关注“，可以查看最新的天气预报；
+中午在公司收到快递电话，可以通过APP远程开门，让快递哥哥将包
+裹暂放到楼梯储蓄柜，并且打开远程监控，”目送“快递小哥离开；
+下班回家，发现电瓶车没电了，打开延时开关，安心充电2小时。
+        </view>
+    </view>
+    <view class="case_bg village_b village_d">
+        <view class="case_head_curr">
+            <view>系统架构</view>
+            <text>System Arhitecture</text>
+        </view>
+        <view class="case_head_img">
+            <image src="../../img/village02.png" />
+        </view>
+    </view>
+</view>

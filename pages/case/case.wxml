@@ -1,6 +1,0 @@
-<view>
-    <view class="curr_banner">
-        <image src="../../img/case_b.jpg" />
-        <text id="bannerText" class="{{_cur==1?'title_c':''}}">解决方案</text>
-    </view>
-</view>

@@ -2,7 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/new/new",
-    "pages/case/case",
     "pages/handle/handle",
     "pages/about/about",
     "pages/goods/goods",
@@ -10,6 +9,19 @@
     "pages/goodsdetail/goodsdetail",
     "pages/handledetail/handledetail",
     "pages/logs/logs"
+  ],
+  "subPackages": [
+    {
+      "root": "packageCase",
+      "pages": [
+        "pages/case/case",
+        "pages/network/network",
+        "pages/intelligent/intelligent",
+        "pages/smart/smart",
+        "pages/building/building",
+        "pages/village/village"
+      ]
+    }
   ],
   "window": {
     "backgroundTextStyle": "light",
