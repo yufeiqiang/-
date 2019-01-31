@@ -68,7 +68,7 @@ Page({
   },
   navigators(e){
     let userType = e.currentTarget.dataset.usertype
-    console.log(userType)
+    // console.log(userType)
     wx.navigateTo({
       url:'../handledetail/handledetail?userType='+userType+''
     })

@@ -31,7 +31,7 @@ Page({
           that.setData({
             newData:res.data.pojo.entryList
           })
-          console.log(that.data.newData)
+          // console.log(that.data.newData)
         }
       }
     })

@@ -7,7 +7,7 @@
     <view class='itemIput'>
       <view class='itemIputLeft'>选择地区</view> 
       <view class='itemIputRight' wx:if="{{multiArray.length>0}}">
-        <picker  mode="multiSelector" bindchange="bindMultiPickerChange"  bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" bindcancel="bindcancel" bindtap='obtainIndex'>
+        <picker  mode="multiSelector" bindchange="bindMultiPickerChange"  bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" bindcancel="bindcancel" bindtap='obtainIndex' name="province">
           <view class="picker">
             {{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}} {{multiArray[2][multiIndex[2]]}}
           </view>
@@ -17,7 +17,7 @@
     <view class='itemIput'>
       <view class='itemIputLeft'>选择楼盘</view> 
       <view class='itemIputRight'>
-        <picker bindchange="bindPickerChange" value="{{builIndex}}" range="{{building}}">
+        <picker bindchange="bindPickerChange" value="{{builIndex}}" range="{{building}}" name="areolaName">
           <view class="picker">
             {{building[builIndex]}}
           </view>
@@ -26,24 +26,24 @@
     </view>
     <view class='itemIput'>
       <view class='itemIputLeft'>姓名</view> 
-      <view class='itemIputRight'><input></input></view>
+      <view class='itemIputRight'><input name="username"></input></view>
     </view>
     <view class='itemIput'>
       <view class='itemIputLeft'>手机</view> 
-      <view class='itemIputRight'><input></input></view>
+      <view class='itemIputRight'><input name="phone"></input></view>
     </view>
     <view class='itemIput'>
       <view class='itemIputLeft'>身份证号</view> 
-      <view class='itemIputRight'><input></input></view>
+      <view class='itemIputRight'><input name="IDcard"></input></view>
     </view>
     <view class='itemIput'>
       <view class='itemIputLeft'>地址</view> 
-      <view class='itemIputRight'><input></input></view>
+      <view class='itemIputRight'><input name="address"></input></view>
     </view>
     <view class='itemIput'>
       <view class='itemIputLeft'>联系时间</view> 
       <view class='itemIputRight'>
-        <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}">
+        <picker mode="multiSelector" value="{{dateTime}}" bindchange="changeDateTime" bindcolumnchange="changeDateTimeColumn" range="{{dateTimeArray}}" name="callTime">
           <view class="tui-picker-detail">
             {{dateTimeArray[0][dateTime[0]]}}-{{dateTimeArray[1][dateTime[1]]}}-{{dateTimeArray[2][dateTime[2]]}} {{dateTimeArray[3][dateTime[3]]}}:{{dateTimeArray[4][dateTime[4]]}}:{{dateTimeArray[5][dateTime[5]]}}
           </view>
@@ -53,12 +53,12 @@
     <view class='itemIput remarks'>
       <view class='itemIputLeft'>备注</view> 
       <view class='itemIputRight'>
-        <textarea></textarea>
+        <textarea name="common"></textarea>
       </view>
     </view>
     <button type="primary" 
             size="default" 
-            bindtap="primary"
+            form-type='submit'
             class='but'> 提交 
     </button>
   </form>

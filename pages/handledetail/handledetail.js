@@ -2,6 +2,8 @@
 const urlList=require('../../config')
 const citys= require('../../select')
 const dateTimePicker= require('../../utils/dateTimePicker')
+import WxValidate from '../../utils/WxValidate.js'
+var Validate 
 Page({
 
   /**
@@ -23,12 +25,14 @@ Page({
     dateTimeArray: null,
     dateTime: null,
   },
+  // 取消按钮
   bindcancel: function (e) {
       // console.log(this.data.obtainIndex)
       this.setData({
         multiArray:[this.changeName(), this.changeCity(0), this.changeArea(0, 0)],
         multiIndex:[0,0,0]
       })
+      this.applyBuilding()
   },
   obtainIndex: function (e) {
       let data={
@@ -63,14 +67,17 @@ Page({
     data.multiIndex[e.detail.column] = e.detail.value;
     switch (e.detail.column) {
       case 0:
+          data.multiIndex[1] = 0
           data.multiArray=[this.changeName(),
           this.changeCity(data.multiIndex[0]),
           this.changeArea(data.multiIndex[0], data.multiIndex[1])];
+          
           data.multiIndex[1] = 0
           data.multiIndex[2] = 0
           break
       case 1:
         data.multiArray = [this.changeName(), this.changeCity(data.multiIndex[0]), this.changeArea(data.multiIndex[0], data.multiIndex[1]) ]
+        
         data.multiIndex[2] = 0
         break
       case 2:
@@ -147,7 +154,7 @@ Page({
             that.setData({
               building:buidingArr
             })
-            console.log(that.data.building)
+            // console.log(that.data.building)
           }
           
       }
@@ -178,12 +185,14 @@ Page({
     let obj = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear);
     this.setData({
       _cur:1,
-      userType:"personal",
+      // userType: options.userType,
+      userType: "business",
       dateTime: obj.dateTime,
       dateTimeArray: obj.dateTimeArray
     })
     this.saveUApply()
     // console.log(dateTimePicker)
+    this.initValidate()
   },
 
   /**
@@ -200,11 +209,48 @@ Page({
         province:this.data.multiArray[0][this.data.multiIndex[0]],
         city:this.data.multiArray[1][this.data.multiIndex[1]],
         area:this.data.multiArray[2][this.data.multiIndex[2]],
-        userType: 'personal'
+        // userType: this.data.userType
+        userType: "business"
       }
     })
   },
+  // 初始化表单
+  initValidate(){
+    // 数据进行验证
+    const rules ={
+      username:{
+        required: true
+      },
+      phone:{
+        required:true
+      }
+    }
 
+    // 验证字段的提示信息，若不传提示默认的信息
+    const messages={
+        username:{
+          required:"请输入名字"
+        },
+        phone:{
+          required:"手机号必填"
+        }
+    }
+    this.Validate=new WxValidate(rules,messages)
+  },
+  // 提交表单
+  formSubmit(e){
+    console.log(e.detail.value)
+    console.log(this.data.dateTimeArray)
+    if (!this.Validate.checkForm(e.detail.value)){
+      const error = this.Validate.errorList[0];
+      wx.showToast({
+          title: `${error.msg}`,
+          icon: 'none',
+          mask:true
+      })
+      return false
+    }
+  },
   /**
    * 生命周期函数--监听页面显示
    */
