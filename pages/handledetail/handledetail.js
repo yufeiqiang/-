@@ -239,8 +239,20 @@ Page({
   },
   // 提交表单
   formSubmit(e){
+    let dateParm = this.data.dateTimeArray[0][this.data.dateTime[0]] + '-' + this.data.dateTimeArray[1][this.data.dateTime[1]] + '-' + this.data.dateTimeArray[2][this.data.dateTime[2]] + '-' + this.data.dateTimeArray[3][this.data.dateTime[3]] + ':' + this.data.dateTimeArray[4][this.data.dateTime[4]] + ':' + this.data.dateTimeArray[5][this.data.dateTime[5]] ;
+
+    let province = this.data.multiArray[0][this.data.multiIndex[0]];
+
+    let city = this.data.multiArray[1][this.data.multiIndex[1]];
+
+    let area = this.data.multiArray[2][this.data.multiIndex[2]];
+
     console.log(e.detail.value)
-    console.log(this.data.dateTimeArray)
+    console.log(province + city + area)
+
+    let formParam=Object.assign(e.detail.value,dateParm,province,city,area);
+
+    console.log(formParam) 
     if (!this.Validate.checkForm(e.detail.value)){
       const error = this.Validate.errorList[0];
       wx.showToast({
