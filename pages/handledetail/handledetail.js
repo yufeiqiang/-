@@ -128,43 +128,19 @@ Page({
               multiArray:[that.changeName(),that.changeCity(0),that.changeArea(0, 0)]
             })
         }
-      }
-    })
-  },
 
-  // 请求楼宇
-  applyBuilding(){
-    let that=this
-    this.initParmData()
-    wx.request({
-      url:urlList.applyBuilding,
-      method:"post",
-      header:{'content-type':'application/x-www-form-urlencoded'},
-      data:that.data.parmData,
-      success:function(e){
-          let buidingArr=[]
-          if(e.data.code==200){
-            let  data=e.data.pojo
-            data.forEach((item,index)=>{
-              buidingArr.push(item.areolaName)
-            })
-            that.setData({
-              building:buidingArr
-            })
-            // console.log(that.data.building)
-          }
-          
+        that.applyBuilding()
       }
     })
   },
 
   // 改变时间
-  changeDateTime(e){
+  changeDateTime(e) {
     this.setData({ dateTime: e.detail.value });
   },
 
   // 更改日期时间列
-  changeDateTimeColumn(e){
+  changeDateTimeColumn(e) {
     var arr = this.data.dateTime, dateArr = this.data.dateTimeArray;
 
     arr[e.detail.column] = e.detail.value;
@@ -175,6 +151,7 @@ Page({
       dateTime: arr
     });
   },
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -189,14 +166,14 @@ Page({
     })
     this.saveUApply()
     this.initValidate()
+    // this.initParmData()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.applyBuilding()
-    this.initParmData()
+    // this.applyBuilding()
   },
 
   initParmData:function(){
@@ -206,7 +183,32 @@ Page({
         city:this.data.multiArray[1][this.data.multiIndex[1]],
         area:this.data.multiArray[2][this.data.multiIndex[2]],
         userType: this.data.userType
-        // userType: "business"
+      }
+    })
+  },
+
+  // 请求楼宇
+  applyBuilding() {
+    let that = this
+    this.initParmData()
+    wx.request({
+      url: urlList.applyBuilding,
+      method: "post",
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      data: that.data.parmData,
+      success: function (e) {
+        let buidingArr = []
+        if (e.data.code == 200) {
+          let data = e.data.pojo
+          data.forEach((item, index) => {
+            buidingArr.push(item.areolaName)
+          })
+          that.setData({
+            building: buidingArr
+          })
+          // console.log(that.data.building)
+        }
+
       }
     })
   },

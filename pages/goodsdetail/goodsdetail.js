@@ -83,7 +83,7 @@ Page({
           that.setData({
             createTime:data.pojo.createTime,
             productTitle:data.pojo.productTitle,
-            productInfo: data.pojo.productInfo
+            productInfo: data.pojo.productInfo.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
           })
         }
       }

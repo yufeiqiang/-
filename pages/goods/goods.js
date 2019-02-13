@@ -7,7 +7,7 @@ Page({
    */
   data: {
     _cur: "",
-    goodsList:{}
+    goodsList:null
   },
 
   /**

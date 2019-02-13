@@ -82,7 +82,7 @@ Page({
         // console.log(data)
         if (res.data.code == 200) {
           that.setData({
-            newsInfor: data.newsInfor,
+            newsInfor: data.newsInfor.replace(/\<img/gi, '<img style="max-width:100%;height:auto" '),
             createTime: data.createTime,
             newsTitle: data.newsTitle
           })
