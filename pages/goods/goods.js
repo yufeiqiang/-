@@ -14,7 +14,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.goods()
+    setTimeout(()=>{
+      this.goods()
+    },3000)
+    // this.goods()
   },
 
   /**
@@ -79,7 +82,6 @@ Page({
           that.setData({
             goodsList:data.pojo
           })
-          // console.log(data.pojo)
         }
       }
     })

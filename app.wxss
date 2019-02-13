@@ -62,3 +62,12 @@ page {
   text-indent: 2em;
   text-align: justify;
 }
+
+.loadding{
+  padding: 80rpx 0;
+  text-align: center;
+}
+.loadding image{
+  width: 40rpx;
+  height: 40rpx;
+}

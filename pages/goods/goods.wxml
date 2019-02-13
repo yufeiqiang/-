@@ -12,4 +12,7 @@
         </view>
       </view>
     </view>
+    <view class='loadding' wx:if="{{ goodsList != unll }}">
+      <image src='../../img/loadding.gif'></image>
+    </view>
 </view>

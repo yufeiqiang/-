@@ -10,19 +10,6 @@
     "pages/handledetail/handledetail",
     "pages/logs/logs"
   ],
-  "subPackages": [
-    {
-      "root": "packageCase",
-      "pages": [
-        "pages/case/case",
-        "pages/network/network",
-        "pages/intelligent/intelligent",
-        "pages/smart/smart",
-        "pages/building/building",
-        "pages/village/village"
-      ]
-    }
-  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#2db5a3",
@@ -52,5 +39,18 @@
         "selectedIconPath": "./img/guanyuwomen_h.png"
       }
     ]
-  }
+  },
+  "subPackages": [
+    {
+      "root": "packageCase",
+      "pages": [
+        "pages/case/case",
+        "pages/network/network",
+        "pages/intelligent/intelligent",
+        "pages/smart/smart",
+        "pages/building/building",
+        "pages/village/village"
+      ]
+    }
+  ]
 }

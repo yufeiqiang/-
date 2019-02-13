@@ -16,9 +16,6 @@ Page({
   },
   onLoad(){
     this.newList()
-    this.setData({
-      newData:[1525]
-    })
   },
   newList(){
     let that=this
@@ -26,12 +23,10 @@ Page({
       url:urlList.newList,
       method:'get',
       success:function(res){
-        // console.log(res)
         if(res.data.code==200){
           that.setData({
             newData:res.data.pojo.entryList
           })
-          // console.log(that.data.newData)
         }
       }
     })

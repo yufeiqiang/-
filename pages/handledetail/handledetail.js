@@ -1,4 +1,3 @@
-// pages/handledetail/handledetail.js
 const urlList=require('../../config')
 const citys= require('../../select')
 const dateTimePicker= require('../../utils/dateTimePicker')
@@ -51,14 +50,12 @@ Page({
 
   // 点击确定按钮
   bindMultiPickerChange: function (e) {
-    // console.log(e.detail.value)
     this.setData({
       multiIndex: e.detail.value,
     })
   },
 
   // 多项选项滚动时触发
-
   bindMultiPickerColumnChange: function (e) {
     var data = {
       multiIndex: this.data.multiIndex,
@@ -185,13 +182,12 @@ Page({
     let obj = dateTimePicker.dateTimePicker(this.data.startYear, this.data.endYear);
     this.setData({
       _cur:1,
-      // userType: options.userType,
-      userType: "business",
+      userType: options.userType,
+      // userType: "business",
       dateTime: obj.dateTime,
       dateTimeArray: obj.dateTimeArray
     })
     this.saveUApply()
-    // console.log(dateTimePicker)
     this.initValidate()
   },
 
@@ -209,12 +205,15 @@ Page({
         province:this.data.multiArray[0][this.data.multiIndex[0]],
         city:this.data.multiArray[1][this.data.multiIndex[1]],
         area:this.data.multiArray[2][this.data.multiIndex[2]],
-        // userType: this.data.userType
-        userType: "business"
+        userType: this.data.userType
+        // userType: "business"
       }
     })
   },
-  // 初始化表单
+  
+  /**
+    初始化表单
+   */
   initValidate(){
     // 数据进行验证
     const rules ={
@@ -229,7 +228,7 @@ Page({
     // 验证字段的提示信息，若不传提示默认的信息
     const messages={
         username:{
-          required:"请输入名字"
+          required:"请输入姓名"
         },
         phone:{
           required:"手机号必填"
@@ -237,22 +236,27 @@ Page({
     }
     this.Validate=new WxValidate(rules,messages)
   },
-  // 提交表单
+  /** 
+   提交表单
+  */
   formSubmit(e){
-    let dateParm = this.data.dateTimeArray[0][this.data.dateTime[0]] + '-' + this.data.dateTimeArray[1][this.data.dateTime[1]] + '-' + this.data.dateTimeArray[2][this.data.dateTime[2]] + '-' + this.data.dateTimeArray[3][this.data.dateTime[3]] + ':' + this.data.dateTimeArray[4][this.data.dateTime[4]] + ':' + this.data.dateTimeArray[5][this.data.dateTime[5]] ;
 
-    let province = this.data.multiArray[0][this.data.multiIndex[0]];
+    // 参数的拼接
+    let formParam = e.detail.value;
 
-    let city = this.data.multiArray[1][this.data.multiIndex[1]];
+    formParam.callTime = this.data.dateTimeArray[0][this.data.dateTime[0]] + '-' + this.data.dateTimeArray[1][this.data.dateTime[1]] + '-' + this.data.dateTimeArray[2][this.data.dateTime[2]] + ' ' + this.data.dateTimeArray[3][this.data.dateTime[3]] + ':' + this.data.dateTimeArray[4][this.data.dateTime[4]] + ':' + this.data.dateTimeArray[5][this.data.dateTime[5]] ;
 
-    let area = this.data.multiArray[2][this.data.multiIndex[2]];
+    formParam.province = this.data.multiArray[0][this.data.multiIndex[0]];
 
-    console.log(e.detail.value)
-    console.log(province + city + area)
+    formParam.city = this.data.multiArray[1][this.data.multiIndex[1]];
 
-    let formParam=Object.assign(e.detail.value,dateParm,province,city,area);
+    formParam.area = this.data.multiArray[2][this.data.multiIndex[2]];
 
-    console.log(formParam) 
+    formParam.areolaName = this.data.building[this.data.builIndex]
+
+    formParam.userType = this.data.userType
+
+    // 提交判断
     if (!this.Validate.checkForm(e.detail.value)){
       const error = this.Validate.errorList[0];
       wx.showToast({
@@ -262,7 +266,38 @@ Page({
       })
       return false
     }
+    this.saveUserApply(formParam)
   },
+
+  // 提交表单
+  saveUserApply(param){
+    wx.request({
+      url:urlList.saveUserApply,
+      data:param,
+      header:{'content-type':'application/x-www-form-urlencoded'},
+      method:'post',
+      success:function(e){
+          let data=e.data
+          if(data.code==200){
+            wx.showModal({
+              content: `${data.desc}`,
+              showCancel: false,
+              success(res) {
+                if (res.confirm) {
+                  wx.navigateBack({
+                    delta: 1
+                  })
+                } 
+              }
+            })
+          }else{
+            console.log(data.desc)
+          }
+      }
+    })
+  },
+
+
   /**
    * 生命周期函数--监听页面显示
    */
