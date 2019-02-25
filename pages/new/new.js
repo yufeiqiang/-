@@ -8,6 +8,12 @@ Page({
   data: {
     _cur:"",
     newData:[],
+    height:'',
+    pageNum:1,
+    isFrom:true,
+    newloadding:true,
+    loaddingComplete:false,
+    onoff:true
   },
 
   /**
@@ -17,9 +23,72 @@ Page({
     this.setData({
       _cur:1
     })
-    this.newList()
+    this.newList(1)
+    wx.getSystemInfo({
+      success:(res)=>{
+        this.setData({
+          height:res.windowHeight
+        })
+      }
+    })
+    
   },
 
+  /**
+ * 下拉加载更多
+ */
+  loadmore() {
+    let that=this
+    if(that.data.newloadding && !this.data.loaddingComplete){
+      that.setData({
+        pageNum:that.data.pageNum+1,
+        isFrom:false
+      })
+      let i=that.data.pageNum
+      that.newList(i)
+    }
+  },
+  /**
+   * 请求新闻列表
+   */
+  newList(pageNum){
+    let that=this
+    wx.request({
+      url:urlList.newList,
+      method:'get',
+      data:{pageNum:pageNum},
+      success:function(res){
+        that.dataList(res,that)
+      }
+    })
+  },
+  /**
+   * 
+   * 访问网络 
+   */
+  dataList(data,that){
+    if(data.data.code==200){
+      let entryList=data.data.pojo.entryList
+      if(entryList.length > 0){
+          let arrNewList=[];
+          that.data.isFrom ? arrNewList=entryList : arrNewList= that.data.newData.concat(entryList)
+          that.setData({
+            newData:arrNewList
+          })
+      }else{
+        that.setData({
+          loaddingComplete:true,
+          newloadding:false
+        })
+      }
+    }
+  },
+  navigators(e){
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../newdetail/newdetail?id='+id+''
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -53,6 +122,7 @@ Page({
    */
   onPullDownRefresh: function () {
 
+
   },
 
   /**
@@ -67,26 +137,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  newList(){
-    let that=this
-    wx.request({
-      url:urlList.newList,
-      method:'get',
-      success:function(res){
-        // console.log(res)
-        if(res.data.code==200){
-          that.setData({
-            newData:res.data.pojo.entryList
-          })
-        }
-      }
-    })
-  },
-  navigators(e){
-    let id = e.currentTarget.dataset.id
-    wx.navigateTo({
-      url: '../newdetail/newdetail?id='+id+''
-    })
   }
 })
