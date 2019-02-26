@@ -13,7 +13,7 @@ Page({
     isFrom:true,
     newloadding:true,
     loaddingComplete:false,
-    onoff:true
+    disabled:false
   },
 
   /**
@@ -39,41 +39,31 @@ Page({
  */
   loadmore() {
     let that=this
-    if(that.data.newloadding && !this.data.loaddingComplete){
+    //触发下拉函数，当newloadding为true时，且loaddingCOmpletefalse时，将pageNum自加1
+    if(that.data.newloadding && !this.data.loaddingComplete && !this.data.disabled){
       that.setData({
         pageNum:that.data.pageNum+1,
-        isFrom:false
+        isFrom:false,
+        disabled:true
       })
       let i=that.data.pageNum
       that.newList(i)
     }
   },
-  /**
-   * 请求新闻列表
-   */
-  newList(pageNum){
-    let that=this
-    wx.request({
-      url:urlList.newList,
-      method:'get',
-      data:{pageNum:pageNum},
-      success:function(res){
-        that.dataList(res,that)
-      }
-    })
-  },
-  /**
+    /**
    * 
-   * 访问网络 
+   * 数据处理赋值给data 
    */
   dataList(data,that){
-    if(data.data.code==200){
+    if(data.data.code==200){ //判断请求是否成功
       let entryList=data.data.pojo.entryList
-      if(entryList.length > 0){
+      if(entryList.length > 0){ //判断是否有数据
           let arrNewList=[];
+          //根据isFrom判断，默认为true;
           that.data.isFrom ? arrNewList=entryList : arrNewList= that.data.newData.concat(entryList)
           that.setData({
-            newData:arrNewList
+            newData:arrNewList,
+            disabled:false
           })
       }else{
         that.setData({
@@ -83,6 +73,24 @@ Page({
       }
     }
   },
+  /**
+   * 请求新闻列表
+   */
+  newList(pageNum){
+    let that=this
+    wx.request({ //新闻请求
+      url:urlList.newList,
+      method:'get',
+      data:{pageNum:pageNum},
+      success:function(res){
+        that.dataList(res,that)  //调取数据处理函数
+      }
+    })
+  },
+
+  /***
+   * 跳转传参数
+   */
   navigators(e){
     let id = e.currentTarget.dataset.id
     wx.navigateTo({

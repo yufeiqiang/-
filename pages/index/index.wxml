@@ -48,7 +48,6 @@
       <text>最新动态</text>
     </navigator>
   </view>
-  
   <!-- 最新动态 -->
   <view>
     <view class='curr_title'>
