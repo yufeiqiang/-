@@ -94,7 +94,6 @@ Page({
             recruitData:res.data.pojo
           })
         }
-        console.log(that.data.recruitData)
       }
     })
   }
